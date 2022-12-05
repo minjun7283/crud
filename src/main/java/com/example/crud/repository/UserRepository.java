@@ -2,45 +2,59 @@ package com.example.crud.repository;
 
 
 import com.example.crud.domain.User;
+import org.jetbrains.annotations.NotNull;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
+import java.util.List;
 
-@org.springframework.stereotype.Repository
-public class Repository {
-
+@Repository
+public class UserRepository {
+    private static ArrayList<String> document;
     public static ArrayList<User> users;
 
-    static {
+
+    static{
         users = new ArrayList<>();
-        users.add(new User("kim","min","jun"));
-        users.add(new User("kin","mgn","juj"));
-        users.add(new User("kif","men","juh"));
+        document = new ArrayList<>();
+        document.add("addasda");
+        users.add(new User("kim ","k","123"));
+        users.add(new User("min ","m","456"));
+        users.add(new User("jun","j","789"));
     }
 
-
-    public User Insert(User user){
+    public User insert(User user){
         users.add(user);
         return user;
     }
-    public ArrayList<User> getAllUsers() {
+
+
+    public List<User> getAllUsers() {
         return users;
     }
     public User getUser(String Id){
         return users.stream()
-                .filter(User -> User.getId().equals(Id))
+                .filter(user -> user.getID().equals(Id))
                 .findAny()
-                .orElse(new User(" ", " "," "));
+                .orElse(new User("", "",""));
     }
 
-    public void Update(String Id, User user){
+    public void update(String ID,  User user){
         users.stream()
-                .filter(User -> User.getId().equals(Id))
+                .filter(user1 -> user1.getID().equals(ID))
                 .findAny()
-                .orElse(new User(" "," "," "))
+                .orElse(new User("","",""))
                 .setUserPw(user.getUserPw());
 
     }
-    public void Delete(String Id){
-        users.removeIf(User -> User.getId().equals(Id));
+    public void delete(String ID){
+        users.removeIf(user -> user.getID().equals(ID));
+    }
+    public List<String> show(){
+        return document;
+    }
+    public void read(String right){
+        document.add(right);
     }
 }
