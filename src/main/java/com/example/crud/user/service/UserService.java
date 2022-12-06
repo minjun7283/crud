@@ -1,11 +1,10 @@
-package com.example.crud.service;
+package com.example.crud.user.service;
 
 
-import com.example.crud.domain.User;
-import com.example.crud.repository.UserRepository;
+import com.example.crud.user.domain.User;
+import com.example.crud.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 import java.util.List;
@@ -34,12 +33,5 @@ public class UserService {
 
     public void delete(String ID){
         repository.delete(ID);
-    }
-    public List<String> show(){
-        return repository.show();
-    }
-
-    public void read(String right){
-        repository.read(right);
     }
 }

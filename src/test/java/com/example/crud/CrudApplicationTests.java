@@ -1,6 +1,6 @@
 package com.example.crud;
 
-import com.example.crud.domain.User;
+import com.example.crud.user.domain.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

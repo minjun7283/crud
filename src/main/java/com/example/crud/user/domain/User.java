@@ -1,4 +1,4 @@
-package com.example.crud.domain;
+package com.example.crud.user.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

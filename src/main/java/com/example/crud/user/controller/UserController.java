@@ -1,10 +1,10 @@
-package com.example.crud.controller;
+package com.example.crud.user.controller;
 
-import com.example.crud.service.UserService;
+import com.example.crud.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.example.crud.domain.User;
+import com.example.crud.user.domain.User;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +16,7 @@ public class UserController {
     @Autowired
     UserService userService;
     @PostMapping("")
-    public User insert(@RequestBody  User user){
+    public User insert(@RequestBody User user){
         return userService.insert(user);
     }
 
@@ -39,13 +39,5 @@ public class UserController {
     public void delete(@PathVariable String ID){
         userService.delete(ID);
     }
-    @GetMapping("/document")
-    public List<String> show(){
-        return userService.show();
-    }
 
-    @PutMapping("/document")
-    public void read(@RequestBody String right){
-        userService.read(right);
-    }
 }
