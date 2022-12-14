@@ -22,7 +22,7 @@ public class BoardController {
         return boardService.read();
     }
 
-    @PutMapping("")
+    @PostMapping("")
     public void write(@RequestBody String board){
         boardService.write(board);
     }

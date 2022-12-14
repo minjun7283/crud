@@ -14,7 +14,7 @@ public class BoardRepository {
 
     static {
         boards = new ArrayList<>();
-        boards.add(new Board("kim"));
+        boards.add(new Board("inij"));
     }
 
     public void write(String board){
